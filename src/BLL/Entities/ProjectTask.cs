@@ -104,6 +104,26 @@ namespace BLL.Entities
                     "PriorityLess",
                     priority => task => task.Priority.Value < Priority.Create(priority).Value.Value 
                 },
+                {
+                    "PriorityEqual",
+                    priority => task => task.Priority.Value == Priority.Create(priority).Value.Value 
+                },
+                {
+                    "StatusGreater",
+                    status => task => task.Status.Value > Status.Create(status).Value.Value
+                },
+                {
+                    "StatusLess",
+                    status => task => task.Status.Value < Status.Create(status).Value.Value
+                },
+                {
+                    "StatusEqual",
+                    status => task => task.Status.Value == Status.Create(status).Value.Value
+                },
+                {
+                    "ProjectEqual",
+                    projectId => project => project.ProjectId.ToString() == projectId
+                }
             };
     }
 }
